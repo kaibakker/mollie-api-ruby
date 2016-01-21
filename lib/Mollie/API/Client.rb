@@ -37,6 +37,11 @@ module Mollie
         addVersionString "Ruby/" << RUBY_VERSION
         addVersionString OpenSSL::OPENSSL_VERSION.split(" ").slice(0, 2).join "/"
       end
+      
+      def initialize(api_key)
+        initialize()
+        setApiKey(api_key)
+      end
 
       def setApiEndpoint(api_endpoint)
         @api_endpoint = api_endpoint.chomp "/"
